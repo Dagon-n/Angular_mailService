@@ -1,0 +1,16 @@
+<div class="containerHeader">
+    <p class="testoHeader">mail-view-component</p>
+</div>
+
+<mat-drawer-container class="containerSidenav">
+
+    <mat-drawer mode="side" opened class="sidenavLeft">
+        <app-folder-list></app-folder-list>
+    </mat-drawer>
+
+    <mat-drawer-content class="sidenavRight">
+        <app-message-list></app-message-list>
+        <app-message-viewer></app-message-viewer>
+    </mat-drawer-content>
+
+  </mat-drawer-container>

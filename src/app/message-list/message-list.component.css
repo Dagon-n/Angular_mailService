@@ -1,0 +1,9 @@
+.containerMessageList {
+    height: 30%;
+    background-color: rgb(0, 0, 255, 0.4);
+    padding: 2%;
+}
+
+.messageList {
+    padding: 1%;
+}

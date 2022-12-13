@@ -1,0 +1,11 @@
+.listTitle {
+    font-weight: bold;
+}
+
+.elementoLista {
+    cursor: pointer;
+}
+
+.elementoLista:hover {
+    font-weight: bold;
+}
