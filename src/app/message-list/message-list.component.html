@@ -1,7 +1,20 @@
 <div class="containerMessageList">
     
-    <div class="messageList">
-        <p>prova</p>
-    </div>
+    <mat-list>
+
+        <mat-list-item>
+            <b>From:</b> {{mailList[0].from}}, <i>{{mailList[0].subject}}</i>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <b>From:</b> {{mailList[1].from}}, <i>{{mailList[1].subject}}</i>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <b>From:</b> {{mailList[2].from}}, <i>{{mailList[2].subject}}</i>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        
+    </mat-list>
 
 </div>
