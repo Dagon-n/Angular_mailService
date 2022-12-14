@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MessageListComponent {
 
+  userLoggato = 'filippo.vallarino@gmail.com';
+
   mailList: { from: string, to: string, subject: string, body: string, id: number }[] = [
     { 'from': 'mario.rossi@gmail.com', 
       'to': 'filippo.vallarino@gmail.com',
@@ -33,5 +35,26 @@ export class MessageListComponent {
       'id': 4
     }
   ];
+
+  mailRicevute = this.mailList.filter( function(mail : {
+    from: string, 
+    to: string, 
+    subject: string, 
+    body: string, 
+    id: number
+  }): boolean {
+    return mail.to == 'filippo.vallarino@gmail.com'
+  });
+
+
+  mailInviate = this.mailList.filter( function(mail : {
+    from: string, 
+    to: string, 
+    subject: string, 
+    body: string, 
+    id: number
+  }): boolean {
+    return mail.from == 'filippo.vallarino@gmail.com'
+  });
 
 }
