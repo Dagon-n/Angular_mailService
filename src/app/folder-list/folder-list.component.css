@@ -1,11 +1,16 @@
 .listTitle {
     font-weight: bold;
+    text-decoration: underline;
 }
 
-.elementoLista {
+.folderSelected {
+    font-weight: bold;
+}
+
+.folderNotSelected {
     cursor: pointer;
 }
 
-.elementoLista:hover {
+.folderNotSelected:hover {
     font-weight: bold;
 }
