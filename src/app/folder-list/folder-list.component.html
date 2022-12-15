@@ -1,6 +1,6 @@
 <h3 class="listTitle">Lista Cartelle</h3>
 <mat-list role="list" *ngFor="let cartella of typeOfFolders">
     <mat-list-item role="listitem">
-        <div class="elementoLista">{{cartella}}</div> 
+        <div class="elementoLista" (click)="onFolderSelection(this.cartella)">{{cartella}}</div> 
     </mat-list-item>
 </mat-list>  

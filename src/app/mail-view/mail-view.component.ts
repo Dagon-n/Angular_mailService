@@ -35,6 +35,8 @@ export class MailViewComponent {
     }
   ];
 
+  utenteLoggato = 'filippo.vallarino@gmail.com'
+
   mailRicevute = this.mailList.filter( function(mail : {
   from: string, 
   to: string, 
@@ -55,6 +57,9 @@ export class MailViewComponent {
     return mail.from == 'filippo.vallarino@gmail.com'
   });
 
-  toShow = 2
+  toShow = ''
+  onCartellaSelezionata(value: string) {
+    this.toShow = value
+  }
 
 }

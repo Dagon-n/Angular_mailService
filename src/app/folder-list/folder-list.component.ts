@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-folder-list',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./folder-list.component.css']
 })
 export class FolderListComponent {
+
+  @Output() cartellaSelezionata = new EventEmitter<string>()
+
   typeOfFolders: string[] = ['Posta in arrivo', 'Inviata', 'Cestino']
+
+  onFolderSelection(cartella: string){
+    this.cartellaSelezionata.emit(cartella)
+  }
+
 }
