@@ -57,14 +57,29 @@ export class MailViewComponent {
     return mail.from == 'filippo.vallarino@gmail.com'
   });
 
+  mailCancellate = []
+
+  firstMailToShow = this.mailList[0]
   toShow = ''
+
   onCartellaSelezionata(value: string) {
     this.toShow = value
+    console.log(value)
+    switch(value) {
+      case 'Inviata':
+        this.firstMailToShow = this.mailInviate[0]
+        break;
+      // case 'Cestino':
+      //   this.firstMailToShow = this.mailCancellate[0]
+      //   break;
+      default:
+        this.firstMailToShow = this.mailList[0]
+    }
+
   }
 
-  selectedMail = {}
-  onMailSelezionata(value: object) {
-    this.selectedMail = value 
+  onMailSelezionata(value: any) {
+    this.firstMailToShow = value 
   }
 
 }

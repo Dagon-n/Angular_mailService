@@ -9,8 +9,8 @@ export class MessageViewerComponent {
 
   @Input() mailToShow: any /* Da un errore se di tipo 'Object' */
 
-  ngAfterContentChecked() {
-    console.log('message viewr', this.mailToShow)
-  }
+  // ngAfterContentChecked() {
+  //   console.log('message viewr', this.mailToShow)
+  // }
 
 }
