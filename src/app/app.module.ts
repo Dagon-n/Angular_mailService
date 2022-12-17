@@ -11,7 +11,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FolderListComponent } from './folder-list/folder-list.component';
 import { MessageListComponent } from './message-list/message-list.component';
 import { MessageViewerComponent } from './message-viewer/message-viewer.component';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import {MatDividerModule} from '@angular/material/divider';
     FolderListComponent,
     MessageListComponent,
     MessageViewerComponent,
+    HeaderToolbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatListModule,
     MatSidenavModule,
     MatDividerModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

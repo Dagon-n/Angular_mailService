@@ -1,5 +1,5 @@
 .containerMessageViewer {
-    height: 50%;
+    height: 40%;
     background-color: rgb(211, 211, 211, 0.2);
     margin: 1%;
     padding: 2%;
@@ -14,13 +14,15 @@
 .oggettoMail {
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .mittenteMail {
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.destinatarioMail {
+.destinatarioMail, .dataMail {
     font-style: oblique;
     font-size: 12px;
 }

@@ -1,19 +1,21 @@
 .containerMessageList {
-    height: 200px;
+    height: 250px;
     background-color: rgb(211, 211, 211, 0.2);
     margin: 1%;
     padding: 1%;
     border-radius: 10px;
 }
 
-.containerList {
-    list-style-type: none;
+.destinatarioMail {
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.singolaMail {
-    cursor: pointer;
+.oggettoMail, .dataMail {
+    font-style: oblique;
+    font-size: 14px;
 }
 
-.singolaMail:hover {
-    color: red;
+.dataMail {
+    float: right;
 }

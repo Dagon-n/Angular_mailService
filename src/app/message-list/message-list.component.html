@@ -1,9 +1,19 @@
 <div class="containerMessageList">
 
-    <ul class="containerList" *ngFor="let mail of mailList">
+    <!-- <ul class="containerList" *ngFor="let mail of mailList">
         <li class="singolaMail" (click)="onSelectedMail(mail)"> 
             <b>{{mail.from}}</b>, <i>{{mail.subject}}</i> 
         </li>
-    </ul>
+    </ul> -->
+
+    <mat-selection-list [multiple]="false">
+
+        <mat-list-option *ngFor="let mail of mailList; first as isFirst" [selected]="isFirst" (click)="onSelectedMail(mail)" class="singolaMail" >
+          <span class="destinatarioMail">{{mail.from}}</span>, 
+          <span class="oggettoMail">{{mail.object}}</span>
+          <span class="dataMail">{{mail.data}}</span>
+        </mat-list-option>
+
+    </mat-selection-list>
 
 </div>
