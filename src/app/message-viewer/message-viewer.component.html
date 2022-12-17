@@ -1,7 +1,15 @@
-<div class="containerMessageList">
+<div class="containerMessageViewer">
     
-    <div class="messageList">
-        <p>message-viewer-component</p>
+    <div class="containerMail">
+
+        <p class="oggettoMail">{{mailToShow.object}}</p>
+        <p class="mittenteMail">Da: {{mailToShow.from}}</p>
+        <p class="destinatarioMail">A: {{mailToShow.to}}</p>
+
+        <div class="contenutoMail">
+            {{mailToShow.content}}
+        </div>
+
     </div>
 
 </div>

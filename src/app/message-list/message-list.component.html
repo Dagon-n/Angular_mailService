@@ -1,7 +1,9 @@
 <div class="containerMessageList">
 
     <ul class="containerList" *ngFor="let mail of mailList">
-        <li> <b>{{mail.from}}</b>, <i>{{mail.subject}}</i> </li>
+        <li class="singolaMail" (click)="onSelectedMail(mail)"> 
+            <b>{{mail.from}}</b>, <i>{{mail.subject}}</i> 
+        </li>
     </ul>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-message-list',
@@ -8,5 +8,10 @@ import { Component, Input } from '@angular/core';
 export class MessageListComponent {
 
   @Input() mailList: any;
+  @Output() mailSelezionata = new EventEmitter<object>()
+
+  onSelectedMail(mail: object) {
+    this.mailSelezionata.emit(mail)
+  }
 
 }

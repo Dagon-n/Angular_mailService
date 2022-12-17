@@ -1,7 +1,7 @@
 <h3 class="listTitle">Lista Cartelle</h3>
 <mat-list role="list" *ngFor="let cartella of typeOfFolders">
     <mat-list-item role="listitem">
-        <div (click)="onFolderSelection(this.cartella)" [ngClass]="boldFolder == (cartella) ? 'folderSelected' : 'folderNotSelected'">
+        <div (click)="onFolderSelection(cartella)" [ngClass]="boldFolder == (cartella) ? 'folderSelected' : 'folderNotSelected'">
             {{cartella}}
         </div> 
     </mat-list-item>

@@ -8,29 +8,29 @@ import { Component } from '@angular/core';
 export class MailViewComponent {
 
   mailList: 
-    { from: string, to: string, subject: string, body: string, id: number }[] = [
+    { from: string, to: string, object: string, content: string, id: number }[] = [
     { 'from': 'mario.rossi@gmail.com', 
       'to': 'filippo.vallarino@gmail.com',
-      'subject': 'angular part 1',
-      'body': 'a b c d e f g',
+      'object': 'angular part 1',
+      'content': 'a b c d e f g',
       'id': 1
     },
     { 'from': 'andrea.bianchi@gmail.com', 
       'to': 'filippo.vallarino@gmail.com',
-      'subject': 'angular part 2',
-      'body': 'a b c d e f g h i',
+      'object': 'angular part 2',
+      'content': 'a b c d e f g h i',
       'id': 2
     },
     { 'from': 'luca.verdi@gmail.com', 
       'to': 'filippo.vallarino@gmail.com',
-      'subject': 'angular part 3',
-      'body': 'a b c d e f g j i l m n o',
+      'object': 'angular part 3',
+      'content': 'a b c d e f g j i l m n o',
       'id': 3
     },
     { 'from': 'filippo.vallarino@gmail.com', 
       'to': 'giulio.bruni@gmail.com',
-      'subject': 'risposta angular',
-      'body': '1 2 3 4 5 6 7',
+      'object': 'risposta angular',
+      'content': '1 2 3 4 5 6 7',
       'id': 4
     }
   ];
@@ -40,8 +40,8 @@ export class MailViewComponent {
   mailRicevute = this.mailList.filter( function(mail : {
   from: string, 
   to: string, 
-  subject: string, 
-  body: string, 
+  object: string, 
+  content: string, 
   id: number
   }): boolean {
     return mail.to == 'filippo.vallarino@gmail.com'
@@ -50,8 +50,8 @@ export class MailViewComponent {
   mailInviate = this.mailList.filter( function(mail : {
   from: string, 
   to: string, 
-  subject: string, 
-  body: string, 
+  object: string, 
+  content: string, 
   id: number
   }): boolean {
     return mail.from == 'filippo.vallarino@gmail.com'
@@ -60,6 +60,11 @@ export class MailViewComponent {
   toShow = ''
   onCartellaSelezionata(value: string) {
     this.toShow = value
+  }
+
+  selectedMail = {}
+  onMailSelezionata(value: object) {
+    this.selectedMail = value 
   }
 
 }

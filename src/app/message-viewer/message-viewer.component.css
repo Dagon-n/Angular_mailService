@@ -1,4 +1,4 @@
-.containerMessageList {
+.containerMessageViewer {
     height: 50%;
     background-color: rgb(211, 211, 211, 0.2);
     margin: 1%;
@@ -6,6 +6,28 @@
     border-radius: 10px;
 }
 
-.messageList {
+.containerMail {
     padding: 1%;
+    /* background-color: rgb(255, 0, 0, 0.1); */
+}
+
+.oggettoMail {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.mittenteMail {
+    font-weight: bold;
+}
+
+.destinatarioMail {
+    font-style: oblique;
+    font-size: 12px;
+}
+
+.contenutoMail {
+    background-color: rgb(200, 200, 200, 0.8);
+    padding: 3%;
+    margin: 1%;
+    border-radius: 10px;
 }

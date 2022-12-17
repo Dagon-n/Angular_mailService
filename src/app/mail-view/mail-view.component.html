@@ -11,12 +11,20 @@
     <mat-drawer-content class="sidenavRight"> <!-- PARTE DESTRA -->
 
         <div [ngSwitch]="toShow">
-            <app-message-list *ngSwitchCase="'Inviata'" [mailList]="mailInviate"></app-message-list>
-            <app-message-list *ngSwitchCase="'Cestino'" [mailList]=""></app-message-list>
-            <app-message-list *ngSwitchDefault [mailList]="mailRicevute"></app-message-list>
+
+            <app-message-list 
+                *ngSwitchCase="'Inviata'" [mailList]="mailInviate" (mailSelezionata)="onMailSelezionata($event)">
+            </app-message-list>
+            <app-message-list 
+                *ngSwitchCase="'Cestino'" [mailList]="" (mailSelezionata)="onMailSelezionata($event)">
+            </app-message-list>
+            <app-message-list 
+                *ngSwitchDefault [mailList]="mailRicevute" (mailSelezionata)="onMailSelezionata($event)">
+            </app-message-list>
+
         </div>
 
-        <app-message-viewer></app-message-viewer>
+        <app-message-viewer [mailToShow]="selectedMail"></app-message-viewer>
 
     </mat-drawer-content>
 

@@ -15,7 +15,6 @@ export class FolderListComponent {
 
   onFolderSelection(cartella: string){
     this.boldFolder = cartella
-    console.log( 'test', this.boldFolder )
     this.cartellaSelezionata.emit(cartella)
   }
 

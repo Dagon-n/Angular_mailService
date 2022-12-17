@@ -9,3 +9,11 @@
 .containerList {
     list-style-type: none;
 }
+
+.singolaMail {
+    cursor: pointer;
+}
+
+.singolaMail:hover {
+    color: red;
+}
