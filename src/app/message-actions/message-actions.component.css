@@ -1,0 +1,7 @@
+.containerButtons {
+    padding: 1%;
+}
+
+.containerButtons > button {
+    /* margin: 3px; */
+}

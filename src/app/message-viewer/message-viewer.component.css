@@ -1,5 +1,5 @@
 .containerMessageViewer {
-    height: 40%;
+    height: 50%;
     background-color: rgb(211, 211, 211, 0.2);
     margin: 1%;
     padding: 2%;
@@ -27,9 +27,14 @@
     font-size: 12px;
 }
 
+.dataMail {
+    margin-bottom: 5px;
+}
+
 .contenutoMail {
     background-color: rgb(200, 200, 200, 0.8);
     padding: 3%;
     margin: 1%;
+    margin-top: 2%;
     border-radius: 10px;
 }

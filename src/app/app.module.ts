@@ -14,6 +14,8 @@ import { MessageViewerComponent } from './message-viewer/message-viewer.componen
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MessageActionsComponent } from './message-actions/message-actions.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.componen
     MessageListComponent,
     MessageViewerComponent,
     HeaderToolbarComponent,
+    MessageActionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.componen
     MatSidenavModule,
     MatDividerModule,
     MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
