@@ -16,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MessageActionsComponent } from './message-actions/message-actions.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MessageActionsComponent } from './message-actions/message-actions.compo
     MatDividerModule,
     MatToolbarModule,
     MatButtonModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
