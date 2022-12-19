@@ -38,7 +38,7 @@ export class MessageActionsComponent {
   }
 
   handleCancella() {
-    alert('cancellato!')
+    console.log(this.mail)
   }
  
 }

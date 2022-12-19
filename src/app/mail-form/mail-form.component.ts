@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MailFormService } from '../Servizi/mail-form.service';
+import { GestoreMailService } from '../Servizi/gestore-mail.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -17,7 +17,7 @@ export class MailFormComponent implements OnInit{
   */
   
   constructor(
-    private prova: MailFormService,
+    private gestoreMail: GestoreMailService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
@@ -49,9 +49,14 @@ export class MailFormComponent implements OnInit{
   contenutoEmail = ''
   contenutoEmailIsDisabled = false
 
-  handleInputClick(event: any) {
+  handleInputClick() {
 
-    this.prova.formInputHandler(event)
+    this.mittente = (<HTMLInputElement>document.getElementById("mittente")).value;
+    this.destinatario = (<HTMLInputElement>document.getElementById("destinatario")).value;
+    this.oggetto = (<HTMLInputElement>document.getElementById("oggetto")).value;
+    this.contenutoEmail = (<HTMLInputElement>document.getElementById("contenuto")).value;
+
+    this.gestoreMail.formInputHandler(this.mittente, this.destinatario, this.oggetto, this.contenutoEmail)
 
   }
 

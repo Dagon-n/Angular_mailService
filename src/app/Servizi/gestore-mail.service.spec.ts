@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MailFormService } from './mail-form.service';
+import { GestoreMailService } from './gestore-mail.service';
 
-describe('MailFormService', () => {
-  let service: MailFormService;
+describe('GestoreMailService', () => {
+  let service: GestoreMailService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MailFormService);
+    service = TestBed.inject(GestoreMailService);
   });
 
   it('should be created', () => {

@@ -4,27 +4,24 @@
 
     <mat-form-field appearance="outline">
         <mat-label>Mittente</mat-label>
-        <input matInput [disabled]="mittenteIsDisabled" value={{mittente}}>
-        <!-- <mat-hint>Hint</mat-hint> -->
+        <input matInput [disabled]="mittenteIsDisabled" value={{mittente}} id="mittente">
     </mat-form-field><br>
 
     <mat-form-field appearance="outline">
         <mat-label>Destinatario</mat-label>
-        <input matInput [disabled]="destinatarioIsDisabled" value={{destinatario}}>
-        <!-- <mat-hint>Hint</mat-hint> -->
+        <input matInput [disabled]="destinatarioIsDisabled" value={{destinatario}} id="destinatario">
     </mat-form-field><br>
 
     <mat-form-field appearance="outline">
         <mat-label>Oggetto</mat-label>
-        <input matInput [disabled]="oggettoIsDisabled" value={{oggetto}}>
-        <!-- <mat-hint>Hint</mat-hint> -->
+        <input matInput [disabled]="oggettoIsDisabled" value={{oggetto}} id="oggetto">
     </mat-form-field><br>
 
     <mat-form-field appearance="fill">
         <mat-label>Contenuto Email</mat-label>
-        <textarea matInput [disabled]="contenutoEmailIsDisabled" value={{contenutoEmail}} rows="8" cols="10">{{contenutoEmail}}</textarea>
+        <textarea matInput [disabled]="contenutoEmailIsDisabled" value={{contenutoEmail}} rows="8" cols="10" id="contenuto">{{contenutoEmail}}</textarea>
     </mat-form-field><br>
 
-    <button mat-raised-button color="primary" (click)="handleInputClick($event)">Invia</button>
+    <button mat-raised-button color="primary" (click)="handleInputClick()">Invia</button>
 
 </div>
