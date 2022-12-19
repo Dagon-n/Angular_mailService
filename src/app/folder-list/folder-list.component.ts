@@ -22,7 +22,12 @@ export class FolderListComponent {
 
   constructor(public dialogRef : MatDialog) {}
   scriviMail() {
-    this.dialogRef.open(MailFormComponent)
+    this.dialogRef.open(MailFormComponent, {
+      width: '50%',
+      height: '90%',
+      data: { chiamatoDa : 'scriviMail' }
+      // panelClass: 'custom-modalbox', si trova in styles.css
+    })
   }
 
 }

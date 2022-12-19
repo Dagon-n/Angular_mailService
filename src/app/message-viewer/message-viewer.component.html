@@ -7,7 +7,7 @@
         <div class="destinatarioMail">A: {{mailToShow.to}}</div>
         <div class="dataMail">{{mailToShow.data}}</div>
 
-        <app-message-actions></app-message-actions>
+        <app-message-actions [mail]="mailToShow"></app-message-actions>
 
         <div class="contenutoMail">
             {{mailToShow.content}}

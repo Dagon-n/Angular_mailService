@@ -1,5 +1,30 @@
 <div class="containerForm">
 
-    <h2>Form</h2>
-    
+    <div class="titoloForm">Scrivi Email</div>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Mittente</mat-label>
+        <input matInput [disabled]="mittenteIsDisabled" value={{mittente}}>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field><br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Destinatario</mat-label>
+        <input matInput [disabled]="destinatarioIsDisabled" value={{destinatario}}>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field><br>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Oggetto</mat-label>
+        <input matInput [disabled]="oggettoIsDisabled" value={{oggetto}}>
+        <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field><br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Contenuto Email</mat-label>
+        <textarea matInput [disabled]="contenutoEmailIsDisabled" value={{contenutoEmail}} rows="8" cols="10">{{contenutoEmail}}</textarea>
+    </mat-form-field><br>
+
+    <button mat-raised-button color="primary" (click)="handleInputClick($event)">Invia</button>
+
 </div>
