@@ -29,5 +29,5 @@ export class FolderListComponent {
       // panelClass: 'custom-modalbox', si trova in styles.css
     })
   }
-
+  
 }

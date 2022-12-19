@@ -1,12 +1,11 @@
-<!-- <div class="containerHeader">
-    <p class="testoHeader">mail-view-component</p>
-</div> -->
 <app-header-toolbar></app-header-toolbar>
 
 <mat-drawer-container class="containerSidenav">
 
-    <mat-drawer mode="side" opened class="sidenavLeft">
+    <mat-drawer mode="side" opened class="sidenavLeft"> <!-- PARTE SINISTRA -->
+
         <app-folder-list (cartellaSelezionata)="onCartellaSelezionata($event)"></app-folder-list>
+
     </mat-drawer>
 
     <mat-drawer-content class="sidenavRight"> <!-- PARTE DESTRA -->
