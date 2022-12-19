@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class GestoreMailService {
 
   constructor() { }
@@ -115,7 +116,21 @@ export class GestoreMailService {
     
   }
 
-  cancellaMailHandler() {
+  cancellaMailHandler(list: string, id: number) {
+
+    console.log(list, id)
+
+    if(list == 'mailRicevute') {
+      let index = this.mailRicevute.map( mail => mail.id).indexOf(id)
+      this.mailRicevute.splice(index, 1)
+    }
+
+    if(list == 'mailInviate') {
+      let index = this.mailInviate.map( mail => mail.id).indexOf(id)
+      this.mailInviate.splice(index, 1)
+    }
+
+    alert('Mail eliminata!')
 
   }
 
