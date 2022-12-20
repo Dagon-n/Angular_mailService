@@ -139,6 +139,7 @@ export class GestoreMailService {
       },
     )
     this.id = this.id + 1
+    alert('Email Inviata!')
     
   }
 
