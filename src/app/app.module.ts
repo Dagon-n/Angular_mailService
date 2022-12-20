@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -22,6 +23,7 @@ import { MessageViewerComponent } from './message-viewer/message-viewer.componen
 import { HeaderToolbarComponent } from './header-toolbar/header-toolbar.component';
 import { MailFormComponent } from './mail-form/mail-form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,7 @@ import { MailFormComponent } from './mail-form/mail-form.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     /* Angular Material */
     MatListModule,
     MatSidenavModule,
