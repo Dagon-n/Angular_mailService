@@ -8,7 +8,7 @@ export class GestoreMailService {
 
   constructor() { }
 
-  id = 4
+  id = 6
   mailList: 
     { from: string, to: string, object: string, data: string, content: string, id: number }[] = [
     { 'from': 'mario.rossi@gmail.com', 
@@ -28,7 +28,7 @@ export class GestoreMailService {
     { 'from': 'andrea.bianchi@gmail.com', 
       'to': 'filippo.vallarino@gmail.com',
       'object': 'angular part 2',
-      'data': '2/12/2022 8:45',
+      'data': '2/12/2022 08:45',
       'content': `
         Aliquam non faucibus enim. Nam non nisl non elit malesuada ultricies. 
         Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
@@ -51,9 +51,9 @@ export class GestoreMailService {
       `,
       'id': 3
     },
-    { 'from': 'filippo.vallarino@gmail.com', 
-      'to': 'giulio.bruni@gmail.com',
-      'object': 'risposta angular',
+    { 'from': 'giulio.bruni@gmail.com', 
+      'to': 'filippo.vallarino@gmail.com',
+      'object': 'angular part 4',
       'data': '4/12/2022 18:17',
       'content':  `
         Etiam accumsan laoreet lectus, non scelerisque nisi iaculis at. Phasellus 
@@ -63,6 +63,32 @@ export class GestoreMailService {
         vestibulum quis est ac tincidunt.
       `,
       'id': 4
+    },
+    { 'from': 'filippo.vallarino@gmail.com', 
+      'to': 'lorenzo.neri@gmail.com',
+      'object': 'risposta angular',
+      'data': '5/12/2022 21:30',
+      'content':  `
+        Lorenzum accumsan laoreet lectus, non scelerisque nisi iaculis at. Phasellus 
+        nec vulputate erat. Sed blandit eget purus et bibendum. Pellentesque ultricies 
+        mollis libero, sit amet tempus neque finibus sollicitudin. Nullam lobortis, turpis 
+        in varius placerat, eros tortor vestibulum ligula, et posuere eros dui at dui. Nam 
+        vestibulum quis est ac tincidunt.
+      `,
+      'id': 5
+    },
+    { 'from': 'claudio.gialli@gmail.com', 
+      'to': 'filippo.vallarino@gmail.com',
+      'object': 'risposta angular',
+      'data': '6/12/2022 07:43',
+      'content':  `
+        Claudium accumsan laoreet lectus, non scelerisque nisi iaculis at. Phasellus 
+        nec vulputate erat. Sed blandit eget purus et bibendum. Pellentesque ultricies 
+        mollis libero, sit amet tempus neque finibus sollicitudin. Nullam lobortis, turpis 
+        in varius placerat, eros tortor vestibulum ligula, et posuere eros dui at dui. Nam 
+        vestibulum quis est ac tincidunt.
+      `,
+      'id': 6
     }
   ];
 

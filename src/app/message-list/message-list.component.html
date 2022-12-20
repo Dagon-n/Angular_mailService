@@ -13,6 +13,7 @@
         </mat-list-option>
 
         <mat-paginator 
+            class="mat-paginator"
             [length]="this.mailList.length"
             [pageSize]="4"
             (page)="onPageChange($event)">
