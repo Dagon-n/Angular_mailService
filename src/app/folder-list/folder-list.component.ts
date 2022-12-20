@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { MailFormComponent } from '../mail-form/mail-form.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-folder-list',

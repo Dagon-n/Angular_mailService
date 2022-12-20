@@ -22,6 +22,6 @@
         <textarea matInput [disabled]="contenutoEmailIsDisabled" value={{contenutoEmail}} rows="8" cols="10" id="contenuto">{{contenutoEmail}}</textarea>
     </mat-form-field><br>
 
-    <button mat-raised-button color="primary" (click)="handleInputClick()">Invia</button>
+    <button mat-raised-button color="primary" (click)="handleInputClick()" matDialogClose>Invia</button>
 
 </div>

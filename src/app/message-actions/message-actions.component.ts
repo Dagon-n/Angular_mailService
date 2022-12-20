@@ -15,7 +15,7 @@ export class MessageActionsComponent {
   constructor(
     public dialogRef : MatDialog,
     private gestoreMail: GestoreMailService,
-    ) {}
+  ) {}
 
   handleRispondi() {
     this.dialogRef.open(MailFormComponent, {

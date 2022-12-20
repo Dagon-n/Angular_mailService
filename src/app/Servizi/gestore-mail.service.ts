@@ -121,12 +121,12 @@ export class GestoreMailService {
     console.log(list, id)
 
     if(list == 'mailRicevute') {
-      let index = this.mailRicevute.map( mail => mail.id).indexOf(id)
+      let index = this.mailRicevute.map( mail => mail.id ).indexOf(id)
       this.mailRicevute.splice(index, 1)
     }
 
     if(list == 'mailInviate') {
-      let index = this.mailInviate.map( mail => mail.id).indexOf(id)
+      let index = this.mailInviate.map( mail => mail.id ).indexOf(id)
       this.mailInviate.splice(index, 1)
     }
 
