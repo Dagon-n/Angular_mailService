@@ -7,9 +7,11 @@
             [selected]="isFirst" 
             (click)="onSelectedMail(mail)" 
             class="singolaMail">
-          <span class="destinatarioMail">{{mail['from']}}</span>, 
-          <span class="oggettoMail">{{mail['object']}}</span>
-          <span class="dataMail">{{mail['data']}}</span>
+                <i class="material-icons star" (click)="onFavouriteClick()">star_border</i> 
+                <!-- se la chiami 'star' diventa tutta colorata -->
+                <span class="destinatarioMail">{{mail['from']}}</span>, 
+                <span class="oggettoMail">{{mail['object']}}</span>
+                <span class="dataMail">{{mail['data']}}</span>
         </mat-list-option>
 
         <mat-paginator 

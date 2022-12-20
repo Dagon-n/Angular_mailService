@@ -33,4 +33,8 @@ export class MessageListComponent implements DoCheck{
     // console.log(this.mailListPageSliced, startIndex, endIndex)
   }
 
+  onFavouriteClick() {
+    alert('aggiunto ai preferiti!')
+  }
+
 }

@@ -1,9 +1,28 @@
+/* @import '~material-design-icons-iconfont/src/material-design-icons'; */
+
 .containerMessageList {
     height: 250px;
     background-color: rgb(211, 211, 211, 0.2);
     margin: 1%;
     padding: 1%;
     border-radius: 10px;
+}
+
+.star {
+    font-size:18px;
+    margin-right: 4%;
+    vertical-align: text-bottom;
+}
+
+.star:hover {
+    color: red;
+}
+
+.starSelected {
+    color: red;
+    font-size:18px;
+    margin-right: 4%;
+    vertical-align: text-bottom;
 }
 
 .destinatarioMail {
