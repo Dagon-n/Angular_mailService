@@ -1,19 +1,25 @@
 <div class="containerMessageList">
 
-    <!-- <ul class="containerList" *ngFor="let mail of mailList">
-        <li class="singolaMail" (click)="onSelectedMail(mail)"> 
-            <b>{{mail.from}}</b>, <i>{{mail.subject}}</i> 
-        </li>
-    </ul> -->
-
     <mat-selection-list [multiple]="false">
 
-        <mat-list-option *ngFor="let mail of mailList; first as isFirst" [selected]="isFirst" (click)="onSelectedMail(mail)" class="singolaMail" >
-          <span class="destinatarioMail">{{mail.from}}</span>, 
-          <span class="oggettoMail">{{mail.object}}</span>
-          <span class="dataMail">{{mail.data}}</span>
+        <mat-list-option 
+            *ngFor="let mail of mailListPageSliced; first as isFirst" 
+            [selected]="isFirst" 
+            (click)="onSelectedMail(mail)" 
+            class="singolaMail">
+          <span class="destinatarioMail">{{mail['from']}}</span>, 
+          <span class="oggettoMail">{{mail['object']}}</span>
+          <span class="dataMail">{{mail['data']}}</span>
         </mat-list-option>
+
+        <mat-paginator 
+            [length]="this.mailList.length"
+            [pageSize]="4"
+            (page)="onPageChange($event)">
+        </mat-paginator>
 
     </mat-selection-list>
 
 </div>
+
+<!-- [pageSizeOptions]="[1, 6, 9]" aria-label="Select page" -->

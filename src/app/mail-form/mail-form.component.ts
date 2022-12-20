@@ -23,7 +23,7 @@ export class MailFormComponent implements OnInit{
 
   ngOnInit() {
     // this.dialogRef.updateSize();
-    console.log(this.data)
+    // console.log(this.data)
     if(this.data.chiamatoDa == 'scriviMail') {
     }
     if(this.data.chiamatoDa == 'rispondi') {
