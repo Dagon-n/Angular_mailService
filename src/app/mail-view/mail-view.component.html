@@ -19,6 +19,9 @@
                 *ngSwitchCase="'Cestino'" [mailList]="cancellate" (mailSelezionata)="onMailSelezionata($event)">
             </app-message-list>
             <app-message-list 
+                *ngSwitchCase="'Preferiti'" [mailList]="preferiti" (mailSelezionata)="onMailSelezionata($event)">
+            </app-message-list>
+            <app-message-list 
                 *ngSwitchDefault [mailList]="ricevute" (mailSelezionata)="onMailSelezionata($event)">
             </app-message-list>
 

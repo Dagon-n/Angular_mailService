@@ -28,11 +28,12 @@ export class MailViewComponent implements OnInit {
   fetchingMails(): void {
     this.fetchingData.getMails().subscribe((data:any) => {
       this.prova = data
-      this.inviate = data.filter((mail:any) => mail.from == this.utenteLoggato)
-      this.ricevute = data.filter((mail:any) => mail.to == this.utenteLoggato)
+      this.inviate = data.filter((mail:any) => mail.from == this.utenteLoggato && mail.isDeleted == false)
+      let mailRicevute = data.filter((mail:any) => mail.to == this.utenteLoggato && mail.isDeleted == false)
+      this.ricevute = mailRicevute
       this.cancellate = data.filter((mail:any) => mail.isDeleted == true)
       this.preferiti = data.filter((mail:any) => mail.isFavourite == true)
-      this.firstMailToShow = data[0]
+      this.firstMailToShow = mailRicevute[0]
     })
   }
 
@@ -51,6 +52,9 @@ export class MailViewComponent implements OnInit {
         break;
       case 'Cestino':
         this.firstMailToShow = this.cancellate[0]
+        break;
+      case 'Preferiti':
+        this.firstMailToShow = this.preferiti[0]
         break;
       default:
         this.firstMailToShow = this.ricevute[0]

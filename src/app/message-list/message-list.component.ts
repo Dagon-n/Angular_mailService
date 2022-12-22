@@ -17,7 +17,7 @@ export class MessageListComponent implements DoCheck, OnInit {
   endIndex = 4
 
   ngOnInit(): void {
-    console.log(this.mailList)
+    // console.log(this.mailList)
   }
 
   ngDoCheck(): void {

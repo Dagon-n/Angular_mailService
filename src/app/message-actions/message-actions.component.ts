@@ -42,13 +42,21 @@ export class MessageActionsComponent {
   }
 
   handleCancella() {
+
     console.log('da eliminare: \n', this.mail)
-    if(this.mail.to == 'filippo.vallarino@gmail.com') {
-      this.gestoreMail.cancellaMailHandler('mailRicevute', this.mail.id)
-    }
-    if(this.mail.from == 'filippo.vallarino@gmail.com') {
-      this.gestoreMail.cancellaMailHandler('mailInviate', this.mail.id)
-    }
+    
+
   }
- 
+
 }
+
+//   handleCancella() {
+
+//     console.log('da eliminare: \n', this.mail)
+//     if(this.mail.to == 'filippo.vallarino@gmail.com') {
+//       this.gestoreMail.cancellaMailHandler('mailRicevute', this.mail.id)
+//     }
+//     if(this.mail.from == 'filippo.vallarino@gmail.com') {
+//       this.gestoreMail.cancellaMailHandler('mailInviate', this.mail.id)
+//     }
+//   }
