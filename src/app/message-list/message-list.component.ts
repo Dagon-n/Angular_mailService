@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, DoCheck } from '@angular/core';
+import { Component, EventEmitter, Input, Output, DoCheck, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 
 @Component({
@@ -6,17 +6,27 @@ import { PageEvent } from '@angular/material/paginator';
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.css']
 })
-export class MessageListComponent implements DoCheck{
+export class MessageListComponent implements DoCheck, OnInit {
 
   @Input() mailList: any;
   @Output() mailSelezionata = new EventEmitter<object>()
 
+  thereAreMails = false
   mailListPageSliced = []
   startIndex = 0
   endIndex = 4
 
+  ngOnInit(): void {
+    console.log(this.mailList)
+  }
+
   ngDoCheck(): void {
-    this.mailListPageSliced = this.mailList?.slice(this.startIndex, this.endIndex)
+    if( this.mailList.length > 0 ) {
+      this.mailListPageSliced = this.mailList?.slice(this.startIndex, this.endIndex)
+      this.thereAreMails = true
+    }else{
+      this.thereAreMails = false
+    }
   }
 
   onSelectedMail(mail: object) {

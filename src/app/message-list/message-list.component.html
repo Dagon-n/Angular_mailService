@@ -1,28 +1,38 @@
-<div class="containerMessageList">
+<ng-template *ngIf = 'thereAreMails; then casoTrue else casoFalse'></ng-template>
 
-    <mat-selection-list [multiple]="false">
+<ng-template #casoTrue> <!-- NEL CASO CI SIANO MAIL DA MOSTRARE -->
 
-        <mat-list-option 
-            *ngFor="let mail of mailListPageSliced; first as isFirst" 
-            [selected]="isFirst" 
-            (click)="onSelectedMail(mail)" 
-            class="singolaMail">
-                <i class="material-icons star" (click)="onFavouriteClick()">star_border</i> 
-                <!-- se la chiami 'star' diventa tutta colorata -->
-                <span class="destinatarioMail">{{mail['from']}}</span>, 
-                <span class="oggettoMail">{{mail['object']}}</span>
-                <span class="dataMail">{{mail['data']}}</span>
-        </mat-list-option>
+    <div class="containerMessageList">
 
-        <mat-paginator 
-            class="mat-paginator"
-            [length]="this.mailList.length"
-            [pageSize]="4"
-            (page)="onPageChange($event)">
-        </mat-paginator>
+        <mat-selection-list [multiple]="false">
+            <mat-list-option 
+                *ngFor="let mail of mailListPageSliced; first as isFirst" 
+                [selected]="isFirst" 
+                (click)="onSelectedMail(mail)" 
+                class="singolaMail">
+                    <i class="material-icons star" (click)="onFavouriteClick()">star_border</i> 
+                    <!-- se la chiami 'star' diventa tutta colorata -->
+                    <span class="destinatarioMail">{{mail['from']}}</span>, 
+                    <span class="oggettoMail">{{mail['object']}}</span>
+                    <span class="dataMail">{{mail['data']}}</span>
+            </mat-list-option>
+    
+            <mat-paginator 
+                class="mat-paginator"
+                [length]="this.mailList.length"
+                [pageSize]="4"
+                (page)="onPageChange($event)">
+            </mat-paginator>
+        </mat-selection-list>
+    
+    </div>
 
-    </mat-selection-list>
+</ng-template>
 
-</div>
+<ng-template #casoFalse> <!-- NEL CASO NON CI SIANO MAIL DA MOSTRARE -->
 
-<!-- [pageSizeOptions]="[1, 6, 9]" aria-label="Select page" -->
+    <div class="containerMessageList">
+        <p class="messaggioNoMail">Non ci sono e-mail da mostrare!</p>
+    </div>
+
+</ng-template>

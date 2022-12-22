@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GestoreMailService } from '../Servizi/gestore-mail.service';
 import { FetchingDataService } from '../Servizi/fetching-data.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { FetchingDataService } from '../Servizi/fetching-data.service';
 export class MailViewComponent implements OnInit {
 
   constructor(
-    public gestoreMail: GestoreMailService,
     private fetchingData: FetchingDataService,
   ) {}
 
@@ -18,6 +16,8 @@ export class MailViewComponent implements OnInit {
   prova: any
   ricevute: any
   inviate: any
+  cancellate: any
+  preferiti: any
   firstMailToShow: any
   toShow = ''
 
@@ -30,31 +30,28 @@ export class MailViewComponent implements OnInit {
       this.prova = data
       this.inviate = data.filter((mail:any) => mail.from == this.utenteLoggato)
       this.ricevute = data.filter((mail:any) => mail.to == this.utenteLoggato)
+      this.cancellate = data.filter((mail:any) => mail.isDeleted == true)
+      this.preferiti = data.filter((mail:any) => mail.isFavourite == true)
       this.firstMailToShow = data[0]
     })
   }
-
-  // mailList = this.gestoreMail.getMailsList()
-  // mailRicevute = this.gestoreMail.getMailRicevute()
-  // mailInviate = this.gestoreMail.getMailInviate()
-  // mailCancellate = []
-  // firstMailToShow = this.gestoreMail.mailList[0]
-  // toShow = ''
 
   onCartellaSelezionata(value: string) {
     console.log(
       'tutte: ', this.prova,
       '\ninviate: \n', this.inviate,
-      '\nricevute: ', this.ricevute
+      '\nricevute: ', this.ricevute,
+      '\ncancellate: ', this.cancellate,
+      '\npreferiti: ', this.preferiti,
     )
     this.toShow = value
     switch(value) {
       case 'Inviata':
         this.firstMailToShow = this.inviate[0]
         break;
-      // case 'Cestino':
-      //   this.firstMailToShow = this.mailCancellate[0]
-      //   break;
+      case 'Cestino':
+        this.firstMailToShow = this.cancellate[0]
+        break;
       default:
         this.firstMailToShow = this.ricevute[0]
     }
