@@ -38,13 +38,13 @@ export class MailViewComponent implements OnInit {
   }
 
   onCartellaSelezionata(value: string) {
-    console.log(
-      'tutte: ', this.prova,
-      '\ninviate: \n', this.inviate,
-      '\nricevute: ', this.ricevute,
-      '\ncancellate: ', this.cancellate,
-      '\npreferiti: ', this.preferiti,
-    )
+    // console.log(
+    //   'tutte: ', this.prova,
+    //   '\ninviate: \n', this.inviate,
+    //   '\nricevute: ', this.ricevute,
+    //   '\ncancellate: ', this.cancellate,
+    //   '\npreferiti: ', this.preferiti,
+    // )
     this.toShow = value
     switch(value) {
       case 'Inviata':

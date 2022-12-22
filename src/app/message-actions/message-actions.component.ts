@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MailFormComponent } from '../mail-form/mail-form.component';
 import { MatDialog } from '@angular/material/dialog';
-import { GestoreMailService } from '../Servizi/gestore-mail.service';
+import { FetchingDataService } from '../Servizi/fetching-data.service';
 
 @Component({
   selector: 'app-message-actions',
@@ -14,7 +14,7 @@ export class MessageActionsComponent {
 
   constructor(
     public dialogRef : MatDialog,
-    private gestoreMail: GestoreMailService,
+    private fetchingData: FetchingDataService,
   ) {}
 
   handleRispondi() {
@@ -42,21 +42,7 @@ export class MessageActionsComponent {
   }
 
   handleCancella() {
-
-    console.log('da eliminare: \n', this.mail)
-    
-
+    this.fetchingData.spostaNelCestino(this.mail)
   }
 
 }
-
-//   handleCancella() {
-
-//     console.log('da eliminare: \n', this.mail)
-//     if(this.mail.to == 'filippo.vallarino@gmail.com') {
-//       this.gestoreMail.cancellaMailHandler('mailRicevute', this.mail.id)
-//     }
-//     if(this.mail.from == 'filippo.vallarino@gmail.com') {
-//       this.gestoreMail.cancellaMailHandler('mailInviate', this.mail.id)
-//     }
-//   }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, DoCheck, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { FetchingDataService } from '../Servizi/fetching-data.service';
 
 @Component({
   selector: 'app-message-list',
@@ -10,6 +11,10 @@ export class MessageListComponent implements DoCheck, OnInit {
 
   @Input() mailList: any;
   @Output() mailSelezionata = new EventEmitter<object>()
+
+  constructor(
+    private fetchingData: FetchingDataService,
+  ) {}
 
   thereAreMails = false
   mailListPageSliced = []
@@ -39,12 +44,10 @@ export class MessageListComponent implements DoCheck, OnInit {
     if (this.endIndex > this.mailList,length) {
       this.endIndex = this.mailList.length
     }
-    // this.mailListPageSliced = this.mailList.slice(startIndex, endIndex)
-    // console.log(this.mailListPageSliced, startIndex, endIndex)
   }
 
-  onFavouriteClick() {
-    alert('aggiunto ai preferiti!')
+  onFavouriteClick(mail: any) {
+    this.fetchingData.impostaPreferito(mail)
   }
 
 }
