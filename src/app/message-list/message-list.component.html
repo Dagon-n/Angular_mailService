@@ -10,8 +10,12 @@
                 [selected]="isFirst" 
                 (click)="onSelectedMail(mail)" 
                 class="singolaMail">
-                    <i class="material-icons star" (click)="onFavouriteClick(mail)">star_border</i> 
-                    <!-- se la chiami 'star' diventa tutta colorata -->
+                    <i 
+                    (click)="onFavouriteClick(mail)" 
+                    [ngClass]="mail['isFavourite'] == false? 'material-icons star' : 'material-icons starSelected' " 
+                    >
+                        star_border
+                    </i>
                     <span class="destinatarioMail">{{mail['from']}}</span>, 
                     <span class="oggettoMail">{{mail['object']}}</span>
                     <span class="dataMail">{{mail['data']}}</span>
