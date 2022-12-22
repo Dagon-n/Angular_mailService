@@ -16,7 +16,7 @@ export class MessageListComponent implements DoCheck{
   endIndex = 4
 
   ngDoCheck(): void {
-    this.mailListPageSliced = this.mailList.slice(this.startIndex, this.endIndex)
+    this.mailListPageSliced = this.mailList?.slice(this.startIndex, this.endIndex)
   }
 
   onSelectedMail(mail: object) {
