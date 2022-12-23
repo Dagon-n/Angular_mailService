@@ -10,6 +10,7 @@ import { FetchingDataService } from '../Servizi/fetching-data.service';
 export class MessageListComponent implements DoCheck, OnInit {
 
   @Input() mailList: any;
+  @Input() mailFolder: any;
   @Output() mailSelezionata = new EventEmitter<object>()
 
   constructor(
@@ -21,8 +22,11 @@ export class MessageListComponent implements DoCheck, OnInit {
   startIndex = 0
   endIndex = 4
 
+  isTheStarToShow = true
   ngOnInit(): void {
-    // console.log(this.mailList)
+    if(this.mailFolder == 'Cestino') {
+      this.isTheStarToShow = false
+    }
   }
 
   ngDoCheck(): void {

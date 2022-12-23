@@ -1,6 +1,6 @@
 <ng-template *ngIf = 'thereAreMails; then casoTrue else casoFalse'></ng-template>
 
-<ng-template #casoTrue> <!-- NEL CASO CI SIANO MAIL DA MOSTRARE -->
+<ng-template #casoTrue> <!-- Case True -->
 
     <div class="containerMessageList">
 
@@ -10,12 +10,11 @@
                 [selected]="isFirst" 
                 (click)="onSelectedMail(mail)" 
                 class="singolaMail">
-                    <i 
-                    (click)="onFavouriteClick(mail)" 
-                    [ngClass]="mail['isFavourite'] == false? 'material-icons star' : 'material-icons starSelected' " 
-                    >
-                        star_border
-                    </i>
+                    <ng-container *ngIf="isTheStarToShow">
+                        <i (click)="onFavouriteClick(mail)" [ngClass]="mail['isFavourite'] == false? 'material-icons star' : 'material-icons starSelected' ">
+                            star_border
+                        </i>
+                    </ng-container>
                     <span class="destinatarioMail">{{mail['from']}}</span>, 
                     <span class="oggettoMail">{{mail['object']}}</span>
                     <span class="dataMail">{{mail['data']}}</span>
@@ -33,7 +32,7 @@
 
 </ng-template>
 
-<ng-template #casoFalse> <!-- NEL CASO NON CI SIANO MAIL DA MOSTRARE -->
+<ng-template #casoFalse> <!-- Case False -->
 
     <div class="containerMessageList">
         <p class="messaggioNoMail">Non ci sono e-mail da mostrare!</p>

@@ -15,16 +15,16 @@
             <div [ngSwitch]="toShow">
 
                 <app-message-list 
-                    *ngSwitchCase="'Inviata'" [mailList]="inviate" (mailSelezionata)="onMailSelezionata($event)">
+                    *ngSwitchCase="'Inviata'" [mailList]="inviate" [mailFolder]="'Inviata'" (mailSelezionata)="onMailSelezionata($event)">
                 </app-message-list>
                 <app-message-list 
-                    *ngSwitchCase="'Cestino'" [mailList]="cancellate" (mailSelezionata)="onMailSelezionata($event)">
+                    *ngSwitchCase="'Cestino'" [mailList]="cancellate" [mailFolder]="'Cestino'" (mailSelezionata)="onMailSelezionata($event)">
                 </app-message-list>
                 <app-message-list 
-                    *ngSwitchCase="'Preferiti'" [mailList]="preferiti" (mailSelezionata)="onMailSelezionata($event)">
+                    *ngSwitchCase="'Preferiti'" [mailList]="preferiti" [mailFolder]="'Preferiti'" (mailSelezionata)="onMailSelezionata($event)">
                 </app-message-list>
                 <app-message-list 
-                    *ngSwitchDefault [mailList]="ricevute" (mailSelezionata)="onMailSelezionata($event)">
+                    *ngSwitchDefault [mailList]="ricevute" [mailFolder]="'Ricevute'" (mailSelezionata)="onMailSelezionata($event)">
                 </app-message-list>
 
             </div>
