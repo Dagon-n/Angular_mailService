@@ -13,7 +13,7 @@ export class MailViewComponent implements OnInit {
   ) {}
 
   utenteLoggato = 'filippo.vallarino@gmail.com'
-  prova: any
+  tutteLeMail: any
   ricevute: any
   inviate: any
   cancellate: any
@@ -21,30 +21,36 @@ export class MailViewComponent implements OnInit {
   firstMailToShow: any
   toShow = ''
 
+  haFinito = false
+
   ngOnInit(): void {
     this.fetchingMails()
   }
 
   fetchingMails(): void {
-    this.fetchingData.getMails().subscribe((data:any) => {
-      this.prova = data
-      this.inviate = data.filter((mail:any) => mail.from == this.utenteLoggato && mail.isDeleted == false)
-      let mailRicevute = data.filter((mail:any) => mail.to == this.utenteLoggato && mail.isDeleted == false)
-      this.ricevute = mailRicevute
-      this.cancellate = data.filter((mail:any) => mail.isDeleted == true)
-      this.preferiti = data.filter((mail:any) => mail.isFavourite == true)
-      this.firstMailToShow = mailRicevute[0]
+
+    this.fetchingData.getMails().subscribe({
+      next: (data) => {
+        this.tutteLeMail = data
+        this.inviate = data.filter((mail:any) => mail.from == this.utenteLoggato && mail.isDeleted == false)
+        let mailRicevute = data.filter((mail:any) => mail.to == this.utenteLoggato && mail.isDeleted == false)
+        this.ricevute = mailRicevute
+        this.cancellate = data.filter((mail:any) => mail.isDeleted == true)
+        this.preferiti = data.filter((mail:any) => mail.isFavourite == true)
+        this.firstMailToShow = mailRicevute[0]
+      },
+      error: (err: Error) => console.warn('Errore!', err),
+      complete: () => {
+        this.haFinito = true
+        console.log('finito', this.haFinito)
+      }
+
     })
+
   }
 
   onCartellaSelezionata(value: string) {
-    // console.log(
-    //   'tutte: ', this.prova,
-    //   '\ninviate: \n', this.inviate,
-    //   '\nricevute: ', this.ricevute,
-    //   '\ncancellate: ', this.cancellate,
-    //   '\npreferiti: ', this.preferiti,
-    // )
+
     this.toShow = value
     switch(value) {
       case 'Inviata':
@@ -60,10 +66,29 @@ export class MailViewComponent implements OnInit {
         this.firstMailToShow = this.ricevute[0]
     }
 
+    this.fetchingMails()
+
   }
 
   onMailSelezionata(value: any) {
-    this.firstMailToShow = value 
+
+    this.firstMailToShow = value
+
+  }
+
+  onCancellazioneMail(mail: any) {
+    this.fetchingMails()
+    this.fetchingData.spostaNelCestino(mail)
+
+    if(mail.to == this.utenteLoggato) {
+      let x = this.ricevute.map( (obj:any) => obj.id ).indexOf(mail.id)
+      this.ricevute[x].isDeleted = true
+      console.log(this.ricevute[x])
+    }else{
+      this.inviate
+    }
+    
+
   }
 
 }

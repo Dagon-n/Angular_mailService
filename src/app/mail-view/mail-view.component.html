@@ -1,34 +1,48 @@
-<app-header-toolbar></app-header-toolbar>
+<!-- <ng-template *ngIf=" haFinito == true ? 'bloccoTrue' : 'bloccoFalse' "></ng-template> -->
 
-<mat-drawer-container class="containerSidenav">
+<!-- <ng-template #bloccoTrue>  -->
 
-    <mat-drawer mode="side" opened class="sidenavLeft"> <!-- PARTE SINISTRA -->
+    <app-header-toolbar></app-header-toolbar>
 
-        <app-folder-list (cartellaSelezionata)="onCartellaSelezionata($event)"></app-folder-list>
+    <mat-drawer-container class="containerSidenav">
 
-    </mat-drawer>
+        <mat-drawer mode="side" opened class="sidenavLeft"> <!-- PARTE SINISTRA -->
 
-    <mat-drawer-content class="sidenavRight"> <!-- PARTE DESTRA -->
+            <app-folder-list (cartellaSelezionata)="onCartellaSelezionata($event)"></app-folder-list>
 
-        <div [ngSwitch]="toShow">
+        </mat-drawer>
 
-            <app-message-list 
-                *ngSwitchCase="'Inviata'" [mailList]="inviate" (mailSelezionata)="onMailSelezionata($event)">
-            </app-message-list>
-            <app-message-list 
-                *ngSwitchCase="'Cestino'" [mailList]="cancellate" (mailSelezionata)="onMailSelezionata($event)">
-            </app-message-list>
-            <app-message-list 
-                *ngSwitchCase="'Preferiti'" [mailList]="preferiti" (mailSelezionata)="onMailSelezionata($event)">
-            </app-message-list>
-            <app-message-list 
-                *ngSwitchDefault [mailList]="ricevute" (mailSelezionata)="onMailSelezionata($event)">
-            </app-message-list>
+        <mat-drawer-content class="sidenavRight"> <!-- PARTE DESTRA -->
 
-        </div>
+            <div [ngSwitch]="toShow">
 
-        <app-message-viewer [mailToShow]="firstMailToShow"></app-message-viewer>
+                <app-message-list 
+                    *ngSwitchCase="'Inviata'" [mailList]="inviate" (mailSelezionata)="onMailSelezionata($event)">
+                </app-message-list>
+                <app-message-list 
+                    *ngSwitchCase="'Cestino'" [mailList]="cancellate" (mailSelezionata)="onMailSelezionata($event)">
+                </app-message-list>
+                <app-message-list 
+                    *ngSwitchCase="'Preferiti'" [mailList]="preferiti" (mailSelezionata)="onMailSelezionata($event)">
+                </app-message-list>
+                <app-message-list 
+                    *ngSwitchDefault [mailList]="ricevute" (mailSelezionata)="onMailSelezionata($event)">
+                </app-message-list>
 
-    </mat-drawer-content>
+            </div>
 
-  </mat-drawer-container>
+            <app-message-viewer 
+                [mailToShow]="firstMailToShow"
+                (datiCancellazione)="onCancellazioneMail($event)"
+            >
+            </app-message-viewer>
+
+        </mat-drawer-content>
+
+    </mat-drawer-container>
+
+<!-- </ng-template> -->
+
+<!-- <ng-template #bloccoFalse> 
+
+</ng-template> -->

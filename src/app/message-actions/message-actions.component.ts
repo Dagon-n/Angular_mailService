@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MailFormComponent } from '../mail-form/mail-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FetchingDataService } from '../Servizi/fetching-data.service';
@@ -11,6 +11,7 @@ import { FetchingDataService } from '../Servizi/fetching-data.service';
 export class MessageActionsComponent {
 
   @Input() mail: any
+  @Output() mandaCancellazione = new EventEmitter<any>
 
   constructor(
     public dialogRef : MatDialog,
@@ -42,7 +43,8 @@ export class MessageActionsComponent {
   }
 
   handleCancella() {
-    this.fetchingData.spostaNelCestino(this.mail)
+    // this.fetchingData.spostaNelCestino(this.mail)
+    this.mandaCancellazione.emit(this.mail)
   }
 
 }

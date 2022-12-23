@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-message-viewer',
@@ -8,9 +8,10 @@ import { Component, Input } from '@angular/core';
 export class MessageViewerComponent {
 
   @Input() mailToShow: any /* Da un errore se di tipo 'Object' */
+  @Output() datiCancellazione = new EventEmitter<any>
 
-  // ngAfterContentChecked() {
-  //   console.log('message viewr', this.mailToShow)
-  // }
+  handleCancellaMail(mail: any) {
+    this.datiCancellazione.emit(mail)
+  }
 
 }
