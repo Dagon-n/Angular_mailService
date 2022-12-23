@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnChanges } from '@angular/core';
 import { MailFormComponent } from '../mail-form/mail-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FetchingDataService } from '../Servizi/fetching-data.service';
@@ -8,7 +8,7 @@ import { FetchingDataService } from '../Servizi/fetching-data.service';
   templateUrl: './message-actions.component.html',
   styleUrls: ['./message-actions.component.css']
 })
-export class MessageActionsComponent {
+export class MessageActionsComponent implements OnChanges {
 
   @Input() mail: any
   @Output() mandaCancellazione = new EventEmitter<any>
@@ -17,6 +17,15 @@ export class MessageActionsComponent {
     public dialogRef : MatDialog,
     private fetchingData: FetchingDataService,
   ) {}
+
+  showRispondiInoltra = true
+  ngOnChanges(): void {
+    if(this.mail.from == 'filippo.vallarino@gmail.com'){
+      this.showRispondiInoltra = false
+    }else{
+      this.showRispondiInoltra = true
+    }
+  }
 
   handleRispondi() {
     this.dialogRef.open(MailFormComponent, {

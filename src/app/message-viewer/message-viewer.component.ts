@@ -8,12 +8,12 @@ import { Component, EventEmitter, Input, Output, OnChanges } from '@angular/core
 export class MessageViewerComponent implements OnChanges {
 
   @Input() mailToShow: any /* Da un errore se di tipo 'Object' */
+  @Input() selectedFolder: any
   @Output() datiCancellazione = new EventEmitter<any>
 
   renderComponent = true
   toShow = true
   ngOnChanges() {
-
     if(!!this.mailToShow) {
 
       /* Case Defined */

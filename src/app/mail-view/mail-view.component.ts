@@ -41,7 +41,7 @@ export class MailViewComponent implements OnInit {
       error: (err: Error) => console.warn('Errore!', err),
       complete: () => {
         this.finishedLoading = true
-        console.log('is loading finished? ', this.finishedLoading)
+        // console.log('is loading finished? ', this.finishedLoading)
       }
 
     })
@@ -58,7 +58,7 @@ export class MailViewComponent implements OnInit {
       error: (err: Error) => console.warn('Errore!', err),
       complete: () => {
         this.finishedLoading = true
-        console.log('is loading finished? ', this.finishedLoading)
+        // console.log('is loading finished? ', this.finishedLoading)
       }
     })
   }
@@ -73,7 +73,7 @@ export class MailViewComponent implements OnInit {
       error: (err: Error) => console.warn('Errore!', err),
       complete: () => {
         this.finishedLoading = true
-        console.log('is loading finished? ', this.finishedLoading)
+        // console.log('is loading finished? ', this.finishedLoading)
       }
     })
   }
@@ -88,7 +88,7 @@ export class MailViewComponent implements OnInit {
       error: (err: Error) => console.warn('Errore!', err),
       complete: () => {
         this.finishedLoading = true
-        console.log('is loading finished? ', this.finishedLoading)
+        // console.log('is loading finished? ', this.finishedLoading)
       }
     })
   }
@@ -103,7 +103,7 @@ export class MailViewComponent implements OnInit {
       error: (err: Error) => console.warn('Errore!', err),
       complete: () => {
         this.finishedLoading = true
-        console.log('is loading finished? ', this.finishedLoading)
+        // console.log('is loading finished? ', this.finishedLoading)
       }
     })
   }

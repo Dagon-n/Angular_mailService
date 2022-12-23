@@ -1,7 +1,7 @@
 /* @import '~material-design-icons-iconfont/src/material-design-icons'; */
 
 .containerMessageList {
-    height: 250px;
+    height: 270px;
     background-color: rgb(211, 211, 211, 0.2);
     margin: 1%;
     padding: 1%;
@@ -37,6 +37,7 @@
 
 .dataMail {
     float: right;
+    padding-right: 5px;
 }
 
 .mat-paginator {
