@@ -11,7 +11,7 @@ export class FolderListComponent {
 
   @Output() cartellaSelezionata = new EventEmitter<string>()
 
-  typeOfFolders: string[] = ['Posta in arrivo', 'Inviata', 'Cestino']
+  typeOfFolders: string[] = ['Posta in arrivo', 'Inviata', 'Preferiti', 'Cestino']
 
   boldFolder = 'Posta in arrivo'
 

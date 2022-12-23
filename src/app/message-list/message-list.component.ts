@@ -1,22 +1,41 @@
-import { Component, EventEmitter, Input, Output, DoCheck } from '@angular/core';
+import { Component, EventEmitter, Input, Output, DoCheck, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { FetchingDataService } from '../Servizi/fetching-data.service';
 
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.css']
 })
-export class MessageListComponent implements DoCheck{
+export class MessageListComponent implements DoCheck, OnInit {
 
   @Input() mailList: any;
+  @Input() mailFolder: any;
   @Output() mailSelezionata = new EventEmitter<object>()
 
+  constructor(
+    private fetchingData: FetchingDataService,
+  ) {}
+
+  thereAreMails = false
   mailListPageSliced = []
   startIndex = 0
   endIndex = 4
 
+  isTheStarToShow = true
+  ngOnInit(): void {
+    if(this.mailFolder == 'Cestino') {
+      this.isTheStarToShow = false
+    }
+  }
+
   ngDoCheck(): void {
-    this.mailListPageSliced = this.mailList.slice(this.startIndex, this.endIndex)
+    if( this.mailList.length > 0 ) {
+      this.mailListPageSliced = this.mailList?.slice(this.startIndex, this.endIndex)
+      this.thereAreMails = true
+    }else{
+      this.thereAreMails = false
+    }
   }
 
   onSelectedMail(mail: object) {
@@ -29,12 +48,10 @@ export class MessageListComponent implements DoCheck{
     if (this.endIndex > this.mailList,length) {
       this.endIndex = this.mailList.length
     }
-    // this.mailListPageSliced = this.mailList.slice(startIndex, endIndex)
-    // console.log(this.mailListPageSliced, startIndex, endIndex)
   }
 
-  onFavouriteClick() {
-    alert('aggiunto ai preferiti!')
+  onFavouriteClick(mail: any) {
+    this.fetchingData.impostaPreferito(mail)
   }
 
 }

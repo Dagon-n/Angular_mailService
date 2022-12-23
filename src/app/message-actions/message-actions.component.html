@@ -1,8 +1,10 @@
 <mat-divider></mat-divider>
 <div class="containerButtons">
 
-    <button mat-button color="primary" (click)="handleRispondi()">Rispondi</button>
-    <button mat-button color="primary" (click)="handleInoltra()">Inoltra</button>
+    <ng-container *ngIf="showRispondiInoltra">
+        <button mat-button color="primary" (click)="handleRispondi()">Rispondi</button>
+        <button mat-button color="primary" (click)="handleInoltra()">Inoltra</button>
+    </ng-container>
     <button mat-button color="warn" (click)="handleCancella()">Cancella</button>
 
 </div>

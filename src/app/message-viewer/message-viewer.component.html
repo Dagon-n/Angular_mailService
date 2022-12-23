@@ -1,4 +1,4 @@
-<div class="containerMessageViewer">
+<div class="containerMessageViewer" *ngIf="renderComponent">
     
     <div class="containerMail">
 
@@ -7,7 +7,13 @@
         <div class="destinatarioMail">A: {{mailToShow.to}}</div>
         <div class="dataMail">{{mailToShow.data}}</div>
 
-        <app-message-actions [mail]="mailToShow"></app-message-actions>
+        <ng-container *ngIf="toShow">
+            <app-message-actions 
+            [mail]="mailToShow"
+            (mandaCancellazione)="handleCancellaMail($event)"
+            >
+            </app-message-actions>
+        </ng-container>
 
         <div class="contenutoMail">
             {{mailToShow.content}}
