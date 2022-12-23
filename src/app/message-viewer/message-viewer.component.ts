@@ -10,13 +10,28 @@ export class MessageViewerComponent implements OnChanges {
   @Input() mailToShow: any /* Da un errore se di tipo 'Object' */
   @Output() datiCancellazione = new EventEmitter<any>
 
+  renderComponent = true
   toShow = true
   ngOnChanges() {
-    if(this.mailToShow.isDeleted == true) {
-      this.toShow = false
+
+    if(!!this.mailToShow) {
+
+      /* Case Defined */
+      this.renderComponent = true
+
+      if(this.mailToShow.isDeleted == true) {
+        this.toShow = false
+      }else{
+        this.toShow = true
+      }
+
     }else{
-      this.toShow = true
+
+      /* Case Undefined */
+      this.renderComponent = false
+
     }
+
   }
 
   handleCancellaMail(mail: any) {

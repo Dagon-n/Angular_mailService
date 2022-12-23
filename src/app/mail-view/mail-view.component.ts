@@ -47,6 +47,7 @@ export class MailViewComponent implements OnInit {
     })
   }
 
+  /* Varie casistiche per switch onCartellaSelezionata, row 112 */
   changeInviate() {
     this.fetchingData.getMails().subscribe({
       next: (data) => {
