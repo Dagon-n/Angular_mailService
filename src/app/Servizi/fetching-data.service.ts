@@ -67,4 +67,24 @@ export class FetchingDataService {
     }
   }
 
+  scriviMail(from: string, to: string, object: string, content: string) {
+
+    let dataOra = new Date().toString()
+    let dataFormattata = dataOra.substring(0, 24)
+
+    this.http.post<any>(this.url, {
+      from: from,
+      to: to,
+      object: object,
+      data: dataFormattata,
+      content: content,
+      isFavourite: false,
+      isDeleted: false,
+    })
+    .subscribe(data => {
+        console.warn('POST', data)
+    });
+
+  }
+
 }

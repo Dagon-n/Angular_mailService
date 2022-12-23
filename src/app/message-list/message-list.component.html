@@ -17,7 +17,7 @@
                     </ng-container>
                     <span class="destinatarioMail">{{mail['from']}}</span>, 
                     <span class="oggettoMail">{{mail['object']}}</span>
-                    <span class="dataMail">{{mail['data']}}</span>
+                    <span class="dataMail">{{mail['data'] | date:'d MMM, y - HH:mm'}}</span>
             </mat-list-option>
     
             <mat-paginator 

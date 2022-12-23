@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { GestoreMailService } from '../Servizi/gestore-mail.service';
+import { FetchingDataService } from '../Servizi/fetching-data.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -18,6 +19,7 @@ export class MailFormComponent implements OnInit{
   
   constructor(
     private gestoreMail: GestoreMailService,
+    private fetchingData: FetchingDataService, 
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
@@ -56,7 +58,14 @@ export class MailFormComponent implements OnInit{
     this.oggetto = (<HTMLInputElement>document.getElementById("oggetto")).value;
     this.contenutoEmail = (<HTMLInputElement>document.getElementById("contenuto")).value;
 
-    this.gestoreMail.formInputHandler(this.mittente, this.destinatario, this.oggetto, this.contenutoEmail)
+    this.fetchingData.scriviMail(
+      this.mittente,
+      this.destinatario,
+      this.oggetto,
+      this.contenutoEmail 
+      )
+
+    // this.gestoreMail.formInputHandler(this.mittente, this.destinatario, this.oggetto, this.contenutoEmail)
 
   }
 
