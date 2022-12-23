@@ -21,14 +21,13 @@ export class MailViewComponent implements OnInit {
   firstMailToShow: any
   toShow = ''
 
-  haFinito = false
+  finishedLoading = false
 
   ngOnInit(): void {
     this.fetchingMails()
   }
 
   fetchingMails(): void {
-
     this.fetchingData.getMails().subscribe({
       next: (data) => {
         this.tutteLeMail = data
@@ -41,8 +40,8 @@ export class MailViewComponent implements OnInit {
       },
       error: (err: Error) => console.warn('Errore!', err),
       complete: () => {
-        this.haFinito = true
-        console.log('finito', this.haFinito)
+        this.finishedLoading = true
+        console.log('is loading finished? ', this.finishedLoading)
       }
 
     })

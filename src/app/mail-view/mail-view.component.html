@@ -1,18 +1,16 @@
-<!-- <ng-template *ngIf=" haFinito == true ? 'bloccoTrue' : 'bloccoFalse' "></ng-template> -->
-
-<!-- <ng-template #bloccoTrue>  -->
+<ng-container *ngIf="finishedLoading"> 
 
     <app-header-toolbar></app-header-toolbar>
 
     <mat-drawer-container class="containerSidenav">
 
-        <mat-drawer mode="side" opened class="sidenavLeft"> <!-- PARTE SINISTRA -->
+        <mat-drawer mode="side" opened class="sidenavLeft"> 
 
             <app-folder-list (cartellaSelezionata)="onCartellaSelezionata($event)"></app-folder-list>
 
         </mat-drawer>
 
-        <mat-drawer-content class="sidenavRight"> <!-- PARTE DESTRA -->
+        <mat-drawer-content class="sidenavRight"> 
 
             <div [ngSwitch]="toShow">
 
@@ -41,8 +39,4 @@
 
     </mat-drawer-container>
 
-<!-- </ng-template> -->
-
-<!-- <ng-template #bloccoFalse> 
-
-</ng-template> -->
+</ng-container>
